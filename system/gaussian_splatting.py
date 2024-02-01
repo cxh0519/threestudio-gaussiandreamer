@@ -14,7 +14,7 @@ from torch.cuda.amp import autocast
 from ..geometry.gaussian_base import BasicPointCloud, Camera
 
 
-@threestudio.register("gaussian-splatting-system")
+@threestudio.register("gaussiandreamer-system")
 class GaussianSplatting(BaseLift3DSystem):
     @dataclass
     class Config(BaseLift3DSystem.Config):

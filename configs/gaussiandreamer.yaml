@@ -19,7 +19,7 @@ data:
   eval_width: 1024
   eval_height: 1024
 
-system_type: "gaussian-splatting-system"
+system_type: "gaussiandreamer-system"
 system:
   geometry_type: "gaussian-splatting"
   geometry:
@@ -47,7 +47,7 @@ system:
     opacity_init: 0.1
     pc_init_radius: 1.6
 
-  renderer_type: "diff-gaussian-rasterizer"
+  renderer_type: "gaussiandreamer-rasterizer"
   renderer:
     debug: false
     invert_bg_prob: 0.5
@@ -56,7 +56,7 @@ system:
   material:
     n_output_dims: 0
 
-  background_type: "gaussian-mvdream-neural-environment-map-background"
+  background_type: "gaussiandreamer-background"
   background:
     color_activation: sigmoid
     random_aug: true

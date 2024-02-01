@@ -38,10 +38,10 @@ Please also install [MVDream extension](https://github.com/DSaurus/threestudio-m
 ## 🚀Quick Start
 ```
 # SD2.1 + shap-e initialize
-python launch.py --config custom/threestudio-gaussiandreamer/configs/gaussian_splatting.yaml  --train --gpu 0 system.prompt_processor.prompt="an amigurumi motorcycle" system.geometry.geometry_convert_from="shap-e:a motorcycle"
+python launch.py --config custom/threestudio-gaussiandreamer/configs/gaussiandreamer.yaml  --train --gpu 0 system.prompt_processor.prompt="an amigurumi motorcycle" system.geometry.geometry_convert_from="shap-e:a motorcycle"
 
 # MVDream + lrm initialize
-python launch.py --config custom/threestudio-gaussiandreamer/configs/gaussian_splatting_mvdream.yaml  --train --gpu 0 system.prompt_processor.prompt="an astronaut wearing a blue suit" system.geometry.geometry_convert_from="lrm:an astronaut"
+python launch.py --config custom/threestudio-gaussiandreamer/configs/gaussiandreamer_mvdream.yaml  --train --gpu 0 system.prompt_processor.prompt="an astronaut wearing a blue suit" system.geometry.geometry_convert_from="lrm:an astronaut"
 ```
 **[Notice]** Different 2D diffusion guidances (SD, MVDream) and initialize methods (shap-e, lrm) can be conbined arbitrarily.
 

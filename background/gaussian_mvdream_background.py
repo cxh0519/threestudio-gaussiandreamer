@@ -11,7 +11,7 @@ from threestudio.utils.ops import get_activation
 from threestudio.utils.typing import *
 
 
-@threestudio.register("gaussian-mvdream-neural-environment-map-background")
+@threestudio.register("gaussiandreamer-background")
 class NeuralEnvironmentMapBackground(BaseBackground):
     @dataclass
     class Config(BaseBackground.Config):
