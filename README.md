@@ -17,7 +17,7 @@
 
 The [GaussianDreamer](https://github.com/hustvl/GaussianDreamer) extension for threestudio. This extension is writen by [Xinhua Cheng](https://github.com/cxh0519/). To use it, please install [threestudio](https://github.com/threestudio-project/threestudio) first and then install this extension in threestudio `custom` directory.
 
-## 🔧Install
+## 🔧Installation
 ```
 cd custom
 git clone https://github.com/cxh0519/threestudio-gaussiandreamer.git
@@ -32,8 +32,6 @@ pip install open3d
 pip install pymeshlab
 ```
 Please also install [MVDream extension](https://github.com/DSaurus/threestudio-mvdream), [shap-e extension](https://github.com/DSaurus/threestudio-shap-e) and my version of [lrm extension](https://github.com/cxh0519/threestudio-lrm) in threestudio `custom` directory with their instructions.
-
-**[Notice]** This extension conflicts with [threestudio-3dgs](https://github.com/DSaurus/threestudio-3dgs). Please make sure only one extension is actived.
 
 ## 🚀Quick Start
 ```
