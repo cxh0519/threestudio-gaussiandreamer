@@ -1,12 +1,19 @@
 # threestudio-GaussianDreamer
 
-<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/sd1" width="" height="128">
-<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/sd2" width="" height="128">
-<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/sd3" width="" height="128">
+<p align="center">
+  <img src="assets/sd1.gif" width="30%">
+  <img src="assets/sd2.gif" width="30%">
+  <img src="assets/sd3.gif" width="30%">
+  <p align="center" style="margin-top: -20px">(a) Results guided by SD</p>
+</p>
 
-<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/mv1" width="" height="128">
-<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/mv2" width="" height="128">
-<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/mv3" width="" height="128">
+<p align="center">
+  <img src="assets/mv1.gif" width="30%">
+  <img src="assets/mv2.gif" width="30%">
+  <img src="assets/mv3.gif" width="30%">
+  <p  align="center" style="margin-top: -20px">(b) Results guided by MVDream</p>
+</p>
+
 
 The [GaussianDreamer](https://github.com/hustvl/GaussianDreamer) extension for threestudio. This extension is writen by [Xinhua Cheng](https://github.com/cxh0519/). To use it, please install [threestudio](https://github.com/threestudio-project/threestudio) first and then install this extension in threestudio `custom` directory.
 
