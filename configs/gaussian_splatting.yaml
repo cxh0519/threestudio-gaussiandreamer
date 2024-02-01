@@ -1,0 +1,109 @@
+name: "gs-sds-generation"
+tag: "${rmspace:${system.prompt_processor.prompt},_}"
+exp_root_dir: "outputs"
+seed: 0
+
+data_type: "random-camera-datamodule"
+data:
+  batch_size: 4
+  camera_distance_range: [1.5, 4.0]
+  elevation_range: [-10, 60]
+  camera_perturb: 0.
+  center_perturb: 0.
+  up_perturb: 0.
+
+  eval_camera_distance: 4.0
+  
+  width: 1024
+  height: 1024
+  eval_width: 1024
+  eval_height: 1024
+
+system_type: "gaussian-splatting-system"
+system:
+  geometry_type: "gaussian-splatting"
+  geometry:
+    position_lr: 0.00005
+    scale_lr: 0.005
+    feature_lr: 0.01
+    opacity_lr: 0.01
+    rotation_lr: 0.001
+    pred_normal: false
+    normal_lr: 0.005
+
+    densification_interval: 100
+    prune_interval: 100
+    densify_from_iter: 300
+    densify_until_iter: 900
+    prune_from_iter: 300
+    prune_until_iter: 900
+    opacity_reset_interval: 100000
+
+    densify_grad_threshold: 0.0002
+    min_opac_prune: 0.05
+    split_thresh: 0.04
+    radii2d_thresh: 1000
+
+    opacity_init: 0.1
+    pc_init_radius: 1.6
+
+  renderer_type: "diff-gaussian-rasterizer"
+  renderer:
+    debug: false
+    invert_bg_prob: 0.5
+
+  material_type: "no-material" # unused
+  material:
+    n_output_dims: 0
+
+  background_type: "gaussian-mvdream-neural-environment-map-background"
+  background:
+    color_activation: sigmoid
+    random_aug: true
+    share_aug_bg: true
+    random_aug_prob: 0.95
+
+  prompt_processor_type: "stable-diffusion-prompt-processor"
+  prompt_processor:
+    pretrained_model_name_or_path: "stabilityai/stable-diffusion-2-1-base"
+    prompt: ???
+    negative_prompt: "ugly, bad anatomy, blurry, pixelated obscure, unnatural colors, poor lighting, dull, and unclear, cropped, lowres, low quality, artifacts, duplicate, morbid, mutilated, poorly drawn face, deformed, dehydrated, bad proportions, unfocused"
+
+  guidance_type: "stable-diffusion-guidance"
+  guidance:
+    pretrained_model_name_or_path: "stabilityai/stable-diffusion-2-1-base"
+    guidance_scale: 100.
+    weighting_strategy: sds
+    min_step_percent: 0.02
+    max_step_percent: [500, 0.98, 0.50, 501]
+    grad_clip: [0, 1.5, 2.0, 1000]
+
+  exporter_type: "gaussian-mesh-exporter"
+
+  loggers:
+    wandb:
+      enable: false
+      project: 'threestudio'
+      name: None
+
+  loss:
+    lambda_sds: 1.
+    lambda_sparsity: 0.
+    lambda_position: 0.
+    lambda_opacity: 0.
+    lambda_scales: 0.
+    lambda_tv_loss: 0.0
+    lambda_depth_tv_loss: 0.
+
+trainer:
+  max_steps: 1200
+  log_every_n_steps: 1
+  num_sanity_val_steps: 0
+  val_check_interval: 100
+  enable_progress_bar: true
+  precision: 32-true
+
+checkpoint:
+  save_last: true # save at each validation time
+  save_top_k: -1
+  every_n_train_steps: ${trainer.max_steps}
