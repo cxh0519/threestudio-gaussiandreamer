@@ -1,5 +1,13 @@
 # threestudio-GaussianDreamer
 
+<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/sd1" width="" height="128">
+<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/sd2" width="" height="128">
+<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/sd3" width="" height="128">
+
+<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/mv1" width="" height="128">
+<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/mv2" width="" height="128">
+<img src="https://github.com/cxh0519/threestudio-gaussiandreamer/assets/mv3" width="" height="128">
+
 The [GaussianDreamer](https://github.com/hustvl/GaussianDreamer) extension for threestudio. This extension is writen by [Xinhua Cheng](https://github.com/cxh0519/). To use it, please install [threestudio](https://github.com/threestudio-project/threestudio) first and then install this extension in threestudio `custom` directory.
 
 ## 🔧Install
@@ -18,12 +26,12 @@ pip install pymeshlab
 ```
 Please also install [MVDream extension](https://github.com/DSaurus/threestudio-mvdream), [shap-e extension](https://github.com/DSaurus/threestudio-shap-e) and my version of [lrm extension](https://github.com/cxh0519/threestudio-lrm) in threestudio `custom` directory with their instructions.
 
-**[Notice]** This extension is conflict with [threestudio-3dgs](https://github.com/DSaurus/threestudio-3dgs). Please make sure only one extension is actived.
+**[Notice]** This extension conflicts with [threestudio-3dgs](https://github.com/DSaurus/threestudio-3dgs). Please make sure only one extension is actived.
 
 ## 🚀Quick Start
 ```
 # SD2.1 + shap-e initialize
-python launch.py --config custom/threestudio-gaussiandreamer/configs/gaussian_splatting.yaml  --train --gpu 0 system.prompt_processor.prompt="a fox" system.geometry.geometry_convert_from="shap-e:a fox"
+python launch.py --config custom/threestudio-gaussiandreamer/configs/gaussian_splatting.yaml  --train --gpu 0 system.prompt_processor.prompt="an amigurumi motorcycle" system.geometry.geometry_convert_from="shap-e:a motorcycle"
 
 # MVDream + lrm initialize
 python launch.py --config custom/threestudio-gaussiandreamer/configs/gaussian_splatting_mvdream.yaml  --train --gpu 0 system.prompt_processor.prompt="an astronaut wearing a blue suit" system.geometry.geometry_convert_from="lrm:an astronaut"
