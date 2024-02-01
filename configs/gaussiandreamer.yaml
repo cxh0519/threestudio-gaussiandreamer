@@ -21,7 +21,7 @@ data:
 
 system_type: "gaussiandreamer-system"
 system:
-  geometry_type: "gaussian-splatting"
+  geometry_type: "gaussiandreamer-base"
   geometry:
     position_lr: 0.00005
     scale_lr: 0.005
@@ -78,7 +78,7 @@ system:
     max_step_percent: [500, 0.98, 0.50, 501]
     grad_clip: [0, 1.5, 2.0, 1000]
 
-  exporter_type: "gaussian-mesh-exporter"
+  exporter_type: "gaussiandreamer-mesh-exporter"
 
   loggers:
     wandb:

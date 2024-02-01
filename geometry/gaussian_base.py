@@ -212,7 +212,7 @@ class Camera(NamedTuple):
     full_proj_transform: torch.Tensor
 
 
-@threestudio.register("gaussian-splatting")
+@threestudio.register("gaussiandreamer-base")
 class GaussianBaseModel(BaseGeometry, GaussianIO):
     @dataclass
     class Config(BaseGeometry.Config):

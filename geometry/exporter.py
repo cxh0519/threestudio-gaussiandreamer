@@ -13,7 +13,7 @@ from threestudio.utils.rasterize import NVDiffRasterizerContext
 from threestudio.utils.typing import *
 
 
-@threestudio.register("gaussian-mesh-exporter")
+@threestudio.register("gaussiandreamer-mesh-exporter")
 class MeshExporter(Exporter):
     @dataclass
     class Config(Exporter.Config):

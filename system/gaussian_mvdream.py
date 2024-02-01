@@ -12,7 +12,7 @@ from threestudio.utils.typing import *
 from ..geometry.gaussian_base import BasicPointCloud
 
 
-@threestudio.register("gaussian-splatting-mvdream-system")
+@threestudio.register("gaussiandreamer-mvdream-system")
 class MVDreamSystem(BaseLift3DSystem):
     @dataclass
     class Config(BaseLift3DSystem.Config):

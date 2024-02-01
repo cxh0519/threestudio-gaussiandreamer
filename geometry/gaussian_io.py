@@ -31,7 +31,7 @@ from tqdm import tqdm
 from .mesh_utils import *
 
 
-@threestudio.register("gaussian-splatting-io")
+@threestudio.register("gaussiandreamer-io")
 class GaussianIO:
     def construct_list_of_attributes(self):
         l = ["x", "y", "z", "nx", "ny", "nz"]

@@ -24,7 +24,7 @@ data:
 
 system_type: "gaussiandreamer-mvdream-system"
 system:
-  geometry_type: "gaussian-splatting"
+  geometry_type: "gaussiandreamer-base"
   geometry:
     position_lr: 0.00005
     scale_lr: 0.005
@@ -82,7 +82,7 @@ system:
     recon_loss: true
     recon_std_rescale: 0.5
 
-  exporter_type: "gaussian-mesh-exporter"
+  exporter_type: "gaussiandreamer-mesh-exporter"
 
   loggers:
     wandb:
