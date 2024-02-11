@@ -432,14 +432,13 @@ class GaussianBaseModel(BaseGeometry, GaussianIO):
             self.get_scaling, scaling_modifier, self._rotation
         )
     
-    def add_points(self, coords, rgb):
+    def add_points(self, coords, RGB, num_points=100000):
         pcd_by3d = o3d.geometry.PointCloud()
         pcd_by3d.points = o3d.utility.Vector3dVector(np.array(coords))
         
         bbox = pcd_by3d.get_axis_aligned_bounding_box()
         np.random.seed(0)
 
-        num_points = 1000000  
         points = np.random.uniform(low=np.asarray(bbox.min_bound), high=np.asarray(bbox.max_bound), size=(num_points, 3))
 
         kdtree = o3d.geometry.KDTreeFlann(pcd_by3d)
