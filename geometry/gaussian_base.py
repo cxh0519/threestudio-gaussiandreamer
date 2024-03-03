@@ -432,7 +432,7 @@ class GaussianBaseModel(BaseGeometry, GaussianIO):
             self.get_scaling, scaling_modifier, self._rotation
         )
     
-    def add_points(self, coords, RGB, num_points=100000):
+    def add_points(self, coords, rgb, num_points=100000):
         pcd_by3d = o3d.geometry.PointCloud()
         pcd_by3d.points = o3d.utility.Vector3dVector(np.array(coords))
         
@@ -455,7 +455,7 @@ class GaussianBaseModel(BaseGeometry, GaussianIO):
         all_coords = np.array(points_inside)
         all_rgb = np.array(color_inside)
         all_coords = np.concatenate([all_coords,coords],axis=0)
-        all_rgb = np.concatenate([all_rgb,rgb],axis=0)
+        all_rgb = np.concatenate([all_rgb, rgb],axis=0)
         return all_coords, all_rgb
 
     def create_from_pcd(self, pcd: BasicPointCloud, spatial_lr_scale: float):
