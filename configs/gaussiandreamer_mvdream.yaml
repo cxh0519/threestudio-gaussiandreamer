@@ -5,12 +5,11 @@ seed: 0
 
 data_type: "mvdream-random-multiview-camera-datamodule"
 data:
-  batch_size: [8,4]
+  batch_size: 4
   n_view: 4
   # 0-4999: 64x64, >=5000: 256x256
-  width: [512, 512]
-  height: [512, 512]
-  resolution_milestones: [1000]
+  width: 512
+  height: 512
   camera_distance_range: [0.8, 1.0] # relative
   fovy_range: [15, 60]
   elevation_range: [0, 30]
