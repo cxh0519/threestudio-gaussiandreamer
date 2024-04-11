@@ -29,6 +29,8 @@ from threestudio.utils.typing import *
 from tqdm import tqdm
 
 from .mesh_utils import *
+from .gaussian_utils import *
+
 
 
 @threestudio.register("gaussiandreamer-io")
